@@ -22,15 +22,16 @@ public class HomeController {
 
     @GetMapping
     public String index(Model model) {
-        model.addAttribute("user", new CustomUserDto());
+        model.addAttribute("customUserDto", new CustomUserDto());
         return "index";
     }
 
     @PostMapping
-    private String create(@Validated @ModelAttribute CustomUserDto user,
+    private String create(@Validated @ModelAttribute CustomUserDto customUserDto,
                           BindingResult bindingResult) {
-        System.out.println("user = " + user);
+        System.out.println("user = " + customUserDto);
         if (bindingResult.hasErrors()) {
+            System.out.println("bindingResult = " + bindingResult);
             return "index";
         }
         return "redirect:/";
