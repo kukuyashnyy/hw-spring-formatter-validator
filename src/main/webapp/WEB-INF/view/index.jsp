@@ -17,7 +17,7 @@
 <body>
 <form:form modelAttribute="customUserDto" method="post">
     <div>
-        <form:label path="login"><fmt:message key="Login"/> </form:label>
+        <form:label path="login">Login</form:label>
         <form:input path="login" required="required"/>
         <form:errors path="login" cssClass="error"/>
     </div>
